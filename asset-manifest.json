@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/dad-jokes-app/static/css/main.8c8b27cf.chunk.css",
+    "main.js": "/dad-jokes-app/static/js/main.71a96aeb.chunk.js",
+    "main.js.map": "/dad-jokes-app/static/js/main.71a96aeb.chunk.js.map",
+    "runtime-main.js": "/dad-jokes-app/static/js/runtime-main.bfe25777.js",
+    "runtime-main.js.map": "/dad-jokes-app/static/js/runtime-main.bfe25777.js.map",
+    "static/js/2.5321ab53.chunk.js": "/dad-jokes-app/static/js/2.5321ab53.chunk.js",
+    "static/js/2.5321ab53.chunk.js.map": "/dad-jokes-app/static/js/2.5321ab53.chunk.js.map",
+    "static/js/3.40851309.chunk.js": "/dad-jokes-app/static/js/3.40851309.chunk.js",
+    "static/js/3.40851309.chunk.js.map": "/dad-jokes-app/static/js/3.40851309.chunk.js.map",
+    "index.html": "/dad-jokes-app/index.html",
+    "static/css/main.8c8b27cf.chunk.css.map": "/dad-jokes-app/static/css/main.8c8b27cf.chunk.css.map",
+    "static/js/2.5321ab53.chunk.js.LICENSE.txt": "/dad-jokes-app/static/js/2.5321ab53.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/dad-jokes-app/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bfe25777.js",
+    "static/js/2.5321ab53.chunk.js",
+    "static/css/main.8c8b27cf.chunk.css",
+    "static/js/main.71a96aeb.chunk.js"
+  ]
+}
