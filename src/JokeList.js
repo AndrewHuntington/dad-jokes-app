@@ -2,14 +2,61 @@ import React, { Component } from "react";
 import Joke from "./Joke";
 import axios from "axios";
 import _ from "lodash";
+import styled from "styled-components/macro";
+
+/**
+ * TODO:
+ * -Separate components into own classes
+ * -Add smilies to the end of joke lis
+ * -Style
+ */
 
 const API_URL = "https://icanhazdadjoke.com/";
+
+const LoadingIcon = styled.i`
+  font-size: 3rem;
+  animation: spin 1s linear infinite;
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg) scale(1);
+    }
+    50% {
+      transform: rotate(180deg) scale(1.5);
+    }
+    100% {
+      transform: rotate(360deg) scale(1);
+    }
+  }
+`;
+
+const Container = styled.div`
+  border: 1px solid orange;
+  display: flex;
+  height: 600px;
+  width: 75%;
+`;
+
+const SideBar = styled.div`
+  border: 1px solid black;
+  width: 30%;
+  height: 100%;
+`;
+
+const ScrollList = styled.div`
+  border: 1px solid purple;
+  margin: auto 0;
+  width: 70%;
+  height: 70%;
+  overflow-x: scroll;
+`;
 
 export default class JokeList extends Component {
   constructor(props) {
     super(props);
     this.state = {
       jokes: [],
+      isLoaded: false,
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -37,7 +84,6 @@ export default class JokeList extends Component {
       if (status !== 200) throw new Error(`Status: ${status}`);
 
       let flag = this.checkForDuplicateJokes(id);
-
       if (flag) {
         i--;
         flag = false;
@@ -45,6 +91,12 @@ export default class JokeList extends Component {
         this.setState((st) => ({ jokes: [...st.jokes, { id, joke, rank }] }));
       }
     }
+
+    this.confirmLoaded();
+  }
+
+  confirmLoaded() {
+    this.setState({ isLoaded: true });
   }
 
   // Check that all ids in this.state.jokes are unique
@@ -81,11 +133,25 @@ export default class JokeList extends Component {
       .reverse();
 
     return (
-      <div className="JokeList">
-        <button onClick={this.handleClick}>Get more jokes!</button>
-        <h1>Dad Jokes</h1>
-        <ul>{jokes}</ul>
-      </div>
+      <>
+        {this.state.isLoaded ? (
+          <Container>
+            <SideBar>
+              <h1>Dad Jokes</h1>
+              <button onClick={this.handleClick}>New Jokes!</button>
+            </SideBar>
+
+            <ScrollList>
+              <ul>{jokes}</ul>
+            </ScrollList>
+          </Container>
+        ) : (
+          <>
+            <h2>Loading...</h2>
+            <LoadingIcon className="far fa-grin-squint-tears"></LoadingIcon>
+          </>
+        )}
+      </>
     );
   }
 }
