@@ -5,13 +5,6 @@ import axios from "axios";
 import _ from "lodash";
 import styled from "styled-components/macro";
 
-/**
- * TODO:
- * -Separate components into own classes
- * -Add smilies to the end of joke lis
- * -Style
- */
-
 const API_URL = "https://icanhazdadjoke.com/";
 
 const LoadingIcon = styled.i`
@@ -121,11 +114,7 @@ export default class Main extends Component {
                 Dad <span className="Main-thin-text">Jokes</span>
               </h1>
               <div className="Main-smiley">
-                <i
-                  class="em-svg em-joy"
-                  aria-role="presentation"
-                  aria-label="ROLLING ON THE FLOOR LAUGHING"
-                ></i>
+                <i class="em-svg em-joy"></i>
               </div>
 
               <button className="Main-button" onClick={this.handleClick}>
@@ -138,10 +127,10 @@ export default class Main extends Component {
             </div>
           </div>
         ) : (
-          <>
+          <div className="Main-loading">
             <h2>Loading...</h2>
             <LoadingIcon className="far fa-grin-squint-tears"></LoadingIcon>
-          </>
+          </div>
         )}
       </>
     );

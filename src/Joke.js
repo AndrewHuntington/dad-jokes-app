@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Ranker from "./Ranker";
 import styled from "styled-components/macro";
-import { get } from "lodash";
+import "animate.css";
 
 const LI = styled.li`
   display: flex;
@@ -33,6 +33,11 @@ const EmojiArea = styled.div`
     width: 1rem;
     margin: 0;
     padding: 0;
+  }
+
+  :hover {
+    animation: swing;
+    animation-duration: 1s;
   }
 `;
 

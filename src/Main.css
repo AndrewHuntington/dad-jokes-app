@@ -87,3 +87,7 @@
   height: 90%;
   overflow-x: scroll;
 }
+
+.Main-loading {
+  color: yellow;
+}
