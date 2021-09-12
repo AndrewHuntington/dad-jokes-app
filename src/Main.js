@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Joke from "./Joke";
+import "./Main.css";
 import axios from "axios";
 import _ from "lodash";
 import styled from "styled-components/macro";
@@ -30,28 +31,7 @@ const LoadingIcon = styled.i`
   }
 `;
 
-const Container = styled.div`
-  border: 1px solid orange;
-  display: flex;
-  height: 600px;
-  width: 75%;
-`;
-
-const SideBar = styled.div`
-  border: 1px solid black;
-  width: 30%;
-  height: 100%;
-`;
-
-const ScrollList = styled.div`
-  border: 1px solid purple;
-  margin: auto 0;
-  width: 70%;
-  height: 70%;
-  overflow-x: scroll;
-`;
-
-export default class JokeList extends Component {
+export default class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -59,8 +39,8 @@ export default class JokeList extends Component {
       isLoaded: false,
     };
 
-    this.handleClick = this.handleClick.bind(this);
     this.vote = this.vote.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
@@ -99,6 +79,10 @@ export default class JokeList extends Component {
     this.setState({ isLoaded: true });
   }
 
+  handleClick() {
+    this.getJokes();
+  }
+
   // Check that all ids in this.state.jokes are unique
   // If a duplicate is found, it must make another request for a new joke
   checkForDuplicateJokes(id) {
@@ -106,10 +90,6 @@ export default class JokeList extends Component {
       if (id === joke.id) return true;
     }
     return false;
-  }
-
-  handleClick() {
-    this.getJokes();
   }
 
   vote(id, direction) {
@@ -135,16 +115,20 @@ export default class JokeList extends Component {
     return (
       <>
         {this.state.isLoaded ? (
-          <Container>
-            <SideBar>
-              <h1>Dad Jokes</h1>
-              <button onClick={this.handleClick}>New Jokes!</button>
-            </SideBar>
+          <div className="Main">
+            <div className="Main-sidebar">
+              <h1>
+                Dad <span className="Main-thin-text">Jokes</span>
+              </h1>
+              <button className="Main-button" onClick={this.handleClick}>
+                New Jokes
+              </button>
+            </div>
 
-            <ScrollList>
+            <div className="Main-jokelist">
               <ul>{jokes}</ul>
-            </ScrollList>
-          </Container>
+            </div>
+          </div>
         ) : (
           <>
             <h2>Loading...</h2>

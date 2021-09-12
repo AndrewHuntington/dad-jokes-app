@@ -14,12 +14,19 @@ html {
 body {
   display: flex;
   align-items: center;
+  font-family: "Rubik", sans-serif;
   min-height: 100vh;
   width: 100%;
 }
 
+h1 {
+  font-size: 2em;
+  font-weight: bolder;
+}
+
 h2 {
   font-size: 1.5rem;
+  font-weight: bolder;
   margin: 1rem;
   letter-spacing: 0.2rem;
 }

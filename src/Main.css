@@ -1,0 +1,49 @@
+.Main {
+  border: 1px solid orange;
+  display: flex;
+  height: 500px;
+  width: 950px;
+}
+
+.Main-sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border-radius: 3px;
+  background-color: mediumpurple;
+  width: 30%;
+  height: 100%;
+}
+
+.Main h1 {
+  color: white;
+  padding-bottom: 0.5em;
+}
+
+.Main-thin-text {
+  font-weight: 300;
+}
+
+.Main-button {
+  background: linear-gradient(
+    135deg,
+    rgba(179, 229, 252, 1) 50%,
+    rgba(240, 98, 146, 1) 50%
+  );
+  border-radius: 25px;
+  border: none;
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+  letter-spacing: 0.2em;
+  padding: 0.75em 0.5em;
+}
+
+.Main-jokelist {
+  border: 1px solid purple;
+  margin: auto 0;
+  width: 70%;
+  height: 70%;
+  overflow-x: scroll;
+}
