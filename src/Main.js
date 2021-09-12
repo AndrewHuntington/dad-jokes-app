@@ -27,16 +27,25 @@ const LoadingIcon = styled.i`
 export default class Main extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      jokes: [],
-      isLoaded: false,
-    };
+    if (localStorage.jokes0811) {
+      this.state = {
+        jokes: JSON.parse(localStorage.jokes0811),
+        isLoaded: true,
+      };
+    } else {
+      this.state = {
+        jokes: [],
+        isLoaded: false,
+      };
+    }
 
     this.vote = this.vote.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
+    if (this.state.isLoaded) return;
+
     try {
       this.getJokes();
     } catch (err) {
@@ -70,6 +79,7 @@ export default class Main extends Component {
 
   confirmLoaded() {
     this.setState({ isLoaded: true });
+    localStorage.setItem("jokes0811", JSON.stringify(this.state.jokes));
   }
 
   handleClick() {
@@ -89,6 +99,7 @@ export default class Main extends Component {
     const joke = this.state.jokes.filter((j) => j.id === id)[0];
     direction === "up" ? (joke.rank += 1) : (joke.rank -= 1);
     this.setState((st) => ({ jokes: [...st.jokes] }));
+    localStorage.setItem("jokes0811", JSON.stringify(this.state.jokes));
   }
 
   render() {
@@ -114,7 +125,7 @@ export default class Main extends Component {
                 Dad <span className="Main-thin-text">Jokes</span>
               </h1>
               <div className="Main-smiley">
-                <i class="em-svg em-joy"></i>
+                <i className="em-svg em-joy"></i>
               </div>
 
               <button className="Main-button" onClick={this.handleClick}>
