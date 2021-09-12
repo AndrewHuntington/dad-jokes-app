@@ -120,6 +120,14 @@ export default class Main extends Component {
               <h1>
                 Dad <span className="Main-thin-text">Jokes</span>
               </h1>
+              <div className="Main-smiley">
+                <i
+                  class="em-svg em-joy"
+                  aria-role="presentation"
+                  aria-label="ROLLING ON THE FLOOR LAUGHING"
+                ></i>
+              </div>
+
               <button className="Main-button" onClick={this.handleClick}>
                 New Jokes
               </button>
