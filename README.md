@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Dad Jokes App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An app that displays random "dad jokes" pulled from [icanhazdadjoke's API](https://icanhazdadjoke.com/). The user can vote on jokes he/she likes or dislikes, which in turn will affect the order of the jokes displayed. The user can also request more jokes with the push of a button. All jokes and votes are saved to the browser's localStorage. No joke should be displayed more than once.
 
-## Available Scripts
+### [Try it live](https://andrewhuntington.github.io/dad-jokes-app/)
 
-In the project directory, you can run:
+# Screen Shot
 
-### `yarn start`
+![Screenshot of Todo App](/other/ss.png "Dad Jokes App")
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Installation and Setup Instructions
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Clone down the repository. You will need `node` and `npm` installed globally on your machine.
 
-### `yarn test`
+Installation:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`npm install`
 
-### `yarn build`
+To Start Server:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`npm start`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To Visit App:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`http://localhost:3000`
 
-### `yarn eject`
+# Technologies Used
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- React
+- JavaScript
+- CSS
+- git / GitHub
+- [Axios](https://www.axios.com)
+- [styled-components](https://styled-components.com)
+- [animate.css](https://animate.style/)
+- [lodash](https://lodash.com)
+- [UUID](https://npmjs.com/package/uuid)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Reflection
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+This is a project that was built for Colt Steele's excellent [The Modern React Bootcamp](https://www.udemy.com/course/modern-react-bootcamp) on Udemy. The main purpose of this project is to solidify my understanding of the React component lifecycle primarily by using componentDidMount to fetch data from an API. Secondary objectives were to review how to retrieve data using asynchronous JavaScript and to put into use all other React concepts learned up until now. These objectives are very similiar to my previous project, [Card Dealer](https://andrewhuntington.github.io/react-cards-api-project/).
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+My biggest hurdles with this project were related to the styling/CSS. I tried to copy the original project as closely as possible without looking at the source code (I only stole the color values for the background and the button component.) However it is not a one-to-one replication, and one will notice small differences if he/she were to compare it with the original. For example, my emojis do not have box-shadows as I couldn't recreate the effect in a pleasing manner. Also, my original plan was to primarily rely on styled-components and break my project into more components, however I ran into state issues, thus the result is a kind of sloppy implementation of styled components along with more traditional stylesheets.
 
-## Learn More
+Despite the issues listed above, I am pretty happy with the outcome. Additionally, although my implementation is not perfect, I do feel I learned a bit more about how to use the styled-components library. For example, I am now comfortable with the way styled-components implements styling child elements.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Additional Acknowledgements
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This readme is based on a template called the [Peronsal project README template](https://gist.github.com/martensonbj/6bf2ec2ed55f5be723415ea73c4557c4) by GitHub user [martensonbj](https://gist.github.com/martensonbj).
 
-### Code Splitting
+This project was bootstrapped with `react-create-app`. I tried my best to mimic the design of the original without looking at the source code. All other code is my own.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Copyright 2021, Andrew Huntington.
